@@ -1,0 +1,27 @@
+<div class="game">
+  <div class="game_inning">
+    <div>{{game.date}}</div>
+    <div>Game {{game.number}}</div>
+    <div>
+      <button [disabled]="(selectedInning$ | async) < 2" (click)="onDecrementInning()">-</button>
+        Inning {{selectedInning$ | async}}
+      <button [disabled]="(selectedInning$ | async) >= 9" (click)="onIncrementInning()">+</button>
+    </div>
+  </div>
+  <div class="game_inning_detail">
+    <div class='game_inning_personnel_pair' *ngFor="let pair of personnelPairings | keyvalue">
+      <div class="personnel">
+        <div>Pitcher</div>
+        <div>{{pair.value.pitcher}}</div>
+        <div>Hitter</div>
+        <div>{{pair.value.hitter}}</div>
+      </div>
+      <div class="events">
+        <div *ngFor="let stat of pair.value.statistics">
+          {{stat.event}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

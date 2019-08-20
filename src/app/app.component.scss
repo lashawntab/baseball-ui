@@ -1,0 +1,50 @@
+.game { 
+    display: flex;
+    flex-direction: column;
+    color:#002147;
+  
+  .game_inning {
+      background: #E57200;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 30px;
+      padding: 20px;
+      font-size: 1.7em;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      border-radius: 2px;
+
+      > :nth-child(2) {
+          font-size: 2em;
+      }
+
+      button {
+          border-radius: 4px;
+      }
+  }
+  
+  .game_inning_detail {
+      height:  100%;
+
+      .game_inning_personnel_pair {
+          display: flex;
+          flex-direction: row;
+          padding: 10px;
+          border-width: 2px;
+          border-color: grey;
+          border-style: solid;
+
+          .personnel {
+              margin-right: 40px;
+              > :nth-child(odd) {
+                  font-size: 1.2em;
+                  font-weight: bold;
+              }
+          }
+          .events {
+              display: flex;
+              flex-direction: column;
+          }
+      }
+  }
+}
